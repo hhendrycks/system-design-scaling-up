@@ -1,7 +1,7 @@
 import React from 'react';
 import Slider from 'react-slick';
 import Arrow from './Arrow';
-import Product from 'hd-thumbnail';
+// import Product from 'hd-thumbnail';
 
 function Carousel({ products }) {
   const settings = {

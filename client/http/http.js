@@ -4,7 +4,8 @@ const carouselProduction =
   'http://homedepottcarousel.us-east-2.elasticbeanstalk.com';
 
 const carouselDev = 'http://localhost:3000';
-const current = carouselProduction;
+// const current = carouselProduction;
+const current = carouselDev;
 if (process.env.ENVIRONMENT === 'DEV') {
   current = carouselDev;
 }
@@ -54,8 +55,11 @@ const http = {
   reviews: {
     get: async function(id) {
       try {
-        const response = await axios.get(reviewsApi + id);
-        return response.data;
+        // const response = await axios.get(reviewsApi + id);
+        // return response.data;
+        const response = await axios.get('/product-data/' + id);
+        console.log("response:", response);
+        return [response.data.rating];
       } catch (error) {
         console.error('error getting reviews', error);
       }

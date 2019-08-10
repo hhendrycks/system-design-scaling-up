@@ -1,3 +1,6 @@
+
+module.exports = db;
+
 const mysql = require('mysql');
 const Promise = require('bluebird');
 
@@ -6,10 +9,11 @@ const relatedItems = require('../utils/relatedItems.json');
 
 var db = mysql.createConnection({
   host: 'localhost',
-  user: process.env.MYSQL_USER,
-  password: process.env.MYSQL_PASS,
+  user: 'root',
+  password: '',
 });
 
+// process.env.MYSQL_USER
 Promise.promisifyAll(db);
 
 db.connect(function(err) {
