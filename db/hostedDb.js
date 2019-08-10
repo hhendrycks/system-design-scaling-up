@@ -3,8 +3,8 @@ require('dotenv').config();
 const pgClient = new pg.Client({
   host: 'ec2-18-220-176-102.us-east-2.compute.amazonaws.com',
   port: 5432,
-  user: 'postgres',
-  password: 'secretpassword',
+  user: process.env.DB_USERNAME,
+  password: process.env.DB_PASSWORD,
   database: 'postgres'
 });
 
