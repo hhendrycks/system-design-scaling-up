@@ -16,12 +16,11 @@ _Challenges_:
   * The function works in chunks of 100,000 products: 
     * generate 100,000 random products (I wrote a helper function to generate fake products) and write them to a CSV file
     * recursively call this function until 10 million products have been written
-    ![Function for writing 10 million pieces of data to a CSV file](writetocsv.png?raw=true)
-  * I had to experiment with what load of writing in each recursive my computer could handle. Heap memory errors were abundant. 
+  * I had to experiment with what load of writing in each recursive call my computer could handle. Heap memory errors were abundant. 
     * Fun bug: Despite specifying the file path of my CSV, my function was creating a new CSV file in a totally different place. I was curious why my CSV file was empty no matter how many times I wrote to it. All along, one massive file was swelling with gigabytes worth of Home Depot products. 
 * Adding those products to a database
   * From the command line I copied the CSV values to a MongoDB database and a PostgreSQL database. 
-  * I indexed my MongoDB for faster queries based on product ID
+  * I indexed my MongoDB for faster queries based on product ID.
   * Battle of the databases: who won?
     * MongoDB tested with Jest, seeded in 05:08:21 minutes
     * Mongodb basic query tests: [5.109s, 1.884s, 3.518s, 3.1s, 3.542s] average: 4.4524s
@@ -32,7 +31,7 @@ _Challenges_:
     * Results closest to average:
   ![PostgreSQL Jest tests](postgres.png?raw=true)
     * PostgreSQL seemed to query faster after its initial connection. It also took up less space than MongoDB's database.
-* I tested querying speed of my chosen database with Artillery:
+* I tested the querying speed of my chosen database with Artillery
   * I had to test my database performance with server get requests, so with Artillery I generated 1,000 virtual users to make 100 requests each. This averaged 1,250 requests per second.
    ![Artillery test results](artillery.png?raw=true)
 * Optimizing my database
