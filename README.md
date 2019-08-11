@@ -23,7 +23,7 @@ _Challenges_:
   * I indexed my MongoDB for faster queries based on product ID.
   * Battle of the databases: who won?
     * MongoDB tested with Jest, seeded in 05:08:21 minutes
-    * Mongodb basic query tests: [5.109s, 1.884s, 3.518s, 3.1s, 3.542s] average: 4.4524s
+    * MongoDB basic query tests: [5.109s, 1.884s, 3.518s, 3.1s, 3.542s] average: 4.4524s
     * Results closest to average:
   ![MongoDB Jest tests](mongodb.png?raw=true)
     * Postgres tested with Jest, seeded in 02:06:37 minutes
